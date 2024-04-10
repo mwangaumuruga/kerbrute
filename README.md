@@ -1,3 +1,17 @@
+HOW I INSTALLED ON  my VIRTUAL SYSYTEM
+1.Navigate to the directory where you cloned the Kerbrute repository:
+//cd kerbrute//
+2.Before building the binary, ensure you have Go (Golang) installed on your system. You can check by running:
+//go version//
+3.If Go is installed, you can build the Kerbrute binary by running:
+//make//
+4.Once the build process completes successfully, you should find the kerbrute binary in the same directory.
+5.navigate into the dist directory and see if the kerbrute binary is located there:
+6.cd dist
+./kerbrute_linux_amd64
+This should successfully execute the Kerbrute tool, allowing you to use it for your intended purposes. If you encounter any issues or need further assistance, feel free to ask!
+
+
 # Kerbrute
 [![CircleCI](https://circleci.com/gh/ropnop/kerbrute.svg?style=svg)](https://circleci.com/gh/ropnop/kerbrute)
 
@@ -32,6 +46,41 @@ Lastly, Kerbrute has a `--safe` option. When this option is enabled, if an accou
 The `help` command can be used for more information
 
 ```
+## Installing
+You can download pre-compiled binaries for Linux, Windows and Mac from the [releases page](https://github.com/ropnop/kerbrute/releases/tag/latest). If you want to live on the edge, you can also install with Go:
+
+```
+$ go get github.com/ropnop/kerbrute
+```
+
+With the repository cloned, you can also use the Make file to compile for common architectures:
+
+```
+$ make help
+help:            Show this help.
+windows:  Make Windows x86 and x64 Binaries
+linux:  Make Linux x86 and x64 Binaries
+mac:  Make Darwin (Mac) x86 and x64 Binaries
+clean:  Delete any binaries
+all:  Make Windows, Linux and Mac x86/x64 Binaries
+
+$ make all
+Done.
+Building for windows amd64..
+Building for windows 386..
+Done.
+Building for linux amd64...
+Building for linux 386...
+Done.
+Building for mac amd64...
+Building for mac 386...
+Done.
+
+$ ls dist/
+kerbrute_darwin_386        kerbrute_linux_386         kerbrute_windows_386.exe
+kerbrute_darwin_amd64      kerbrute_linux_amd64       kerbrute_windows_amd64.exe
+```
+
 $ ./kerbrute -h
 
     __             __               __
@@ -157,40 +206,6 @@ Version: dev (n/a) - 05/11/19 - Ronnie Flathers @ropnop
 2019/05/11 18:40:56 >  Done! Tested 7 logins (1 successes) in 0.114 seconds
 ```
 
-## Installing
-You can download pre-compiled binaries for Linux, Windows and Mac from the [releases page](https://github.com/ropnop/kerbrute/releases/tag/latest). If you want to live on the edge, you can also install with Go:
-
-```
-$ go get github.com/ropnop/kerbrute
-```
-
-With the repository cloned, you can also use the Make file to compile for common architectures:
-
-```
-$ make help
-help:            Show this help.
-windows:  Make Windows x86 and x64 Binaries
-linux:  Make Linux x86 and x64 Binaries
-mac:  Make Darwin (Mac) x86 and x64 Binaries
-clean:  Delete any binaries
-all:  Make Windows, Linux and Mac x86/x64 Binaries
-
-$ make all
-Done.
-Building for windows amd64..
-Building for windows 386..
-Done.
-Building for linux amd64...
-Building for linux 386...
-Done.
-Building for mac amd64...
-Building for mac 386...
-Done.
-
-$ ls dist/
-kerbrute_darwin_386        kerbrute_linux_386         kerbrute_windows_386.exe
-kerbrute_darwin_amd64      kerbrute_linux_amd64       kerbrute_windows_amd64.exe
-```
 
 ## Credits
 Huge shoutout to jcmturner for his pure Go implementation of KRB5: https://github.com/jcmturner/gokrb5 . An amazing project and very well documented. Couldn't have done any of this without that project. 
